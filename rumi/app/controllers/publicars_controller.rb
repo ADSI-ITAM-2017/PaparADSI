@@ -1,4 +1,8 @@
 class PublicarsController < ApplicationController
+  def new
+  	@publicar = Publicar.new
+  end
+
   def index
   end
 

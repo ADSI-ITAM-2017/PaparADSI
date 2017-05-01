@@ -39,21 +39,51 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-            <a class="navbar-brand" href="#">Rumi</a>
+            <%= link_to "Rumi", root_url, class: "navbar-brand" %>
+
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
+
+                    <%- if current_user %>
+
+
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+
+                    <%= link_to "Nueva Casa", new_publicar_path %>
                     </li>
+
+                    <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                    </li>
+
+                    <% else %>
+
+                    <li>
+                    <%= link_to "Sign Up", new_user_registration_path %>
+                    </li>
+
+                    <li>
+                    <%= link_to "Login", new_user_session_path %>
+                    </li>
+
+                    <% end %>
+
+                    <li>
+                        <%= link_to "Favoritos", root_url %>
+                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <%= link_to "Mensajes", root_url %>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <%= link_to "Mis bienes", root_url %>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <%= link_to "Historial", root_url %>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -163,6 +193,23 @@
 
     </div>
     <!-- /.container -->
+
+
+    <div class="container">
+
+        <div class="row">
+        <div class="col-lg-12 text-center">
+
+            <% flash.each do |a, b| %>
+                <div class="alert alert-success"> <%= b %> </div>
+            <% end %>
+            <%= yield %>
+        </div>
+        </div>
+
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="py-5 bg-inverse">
