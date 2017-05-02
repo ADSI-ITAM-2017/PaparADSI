@@ -100,8 +100,29 @@
         <!-- Page Heading -->
         <h1 class="my-4">Lugares Disponibles <small>Los mejores para ti</small></h1>
 
+
+        
+        <% @publicars.each do |x| %>
+            <div class="white">
+
+            <div class="col-md-7">
+            <%= image_tag x.image.url(:medium) %>
+            </div>
+            <br>
+            <div class="col-md-5">
+            <%= x.description %>
+            <a class="btn btn-primary" href="#">View Project</a>
+            </div>
+
+            </div>
+
+            <hr>
+        <% end %> 
+
+
+
         <!-- Project One -->
-        <div class="row">
+    <!--    <div class="row">
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
@@ -113,12 +134,13 @@
                 <a class="btn btn-primary" href="#">View Project</a>
             </div>
         </div>
-        <!-- /.row -->
+         
 
         <hr>
+    -->
 
         <!-- Project Two -->
-        <div class="row">
+    <!--   <div class="row">
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
@@ -130,12 +152,12 @@
                 <a class="btn btn-primary" href="#">View Project</a>
             </div>
         </div>
-        <!-- /.row -->
 
         <hr>
+    -->
 
         <!-- Project Three -->
-        <div class="row">
+    <!--    <div class="row">
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
@@ -147,12 +169,13 @@
                 <a class="btn btn-primary" href="#">View Project</a>
             </div>
         </div>
-        <!-- /.row -->
+    
 
         <hr>
+    -->
 
         <!-- Project Four -->
-        <div class="row">
+    <!--    <div class="row">
 
             <div class="col-md-7">
                 <a href="#">
@@ -165,9 +188,10 @@
                 <a class="btn btn-primary" href="#">View Project</a>
             </div>
         </div>
-        <!-- /.row -->
+    
 
         <hr>
+    -->
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center">

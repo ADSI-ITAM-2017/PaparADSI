@@ -7,5 +7,27 @@ class PublicarsController < ApplicationController
   end
 
   def show
+    @publicar = Publicar.find(params[:id])
   end
+
+
+  def create
+  	@publicar = Publicar.new(permit_publicar)
+
+  	if @publicar.save
+  		flash[:success] = "Success!"
+  		redirect_to publicar_path(@publicar)
+  	else
+  		flash[:error] = @publicar.error.full
+  		redirect_to new_publicar_path
+  	end
+
+
+  end
+
+  private
+  	def permit_publicar
+  		params.require(:publicar).permit(:image, :description)
+  	end
+
 end
