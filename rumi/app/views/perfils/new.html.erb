@@ -1,0 +1,46 @@
+<%= form_for :perfil do |f| %>
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :Nombre %>
+  </p>
+
+  <p>
+    <%= f.label :Apellido %><br>
+    <%= f.text_field :Apellido %>
+  </p>
+
+  <p>
+    <%= f.label :Telefono %><br>
+    <%= f.text_field :Telefono %>
+  </p>
+
+  <p>
+    <%= f.label :Edad %><br>
+    <%= f.text_field :Edad %>
+  </p>
+
+
+  <p>
+    <%= f.label "Correo Electronico" %><br>
+    <%= f.text_field :Correo_Electronico %>
+  </p>
+
+  <p>
+    <%= f.label :Descripcion %><br>
+    <%= f.text_area :Descripcion %>
+  </p>
+
+  <p>
+    <%= f.label :Arrendador %><br>
+    <%= f.check_box :Arrendador %>
+  </p>
+
+  <p>
+    <%= f.label :Arrendatario %><br>
+    <%= f.check_box :Arrendatario %>
+  </p>
+ 
+  <p>
+     <%= link_to "Guardar Perfil", perfils_index_path %>
+  </p>
+<% end %>

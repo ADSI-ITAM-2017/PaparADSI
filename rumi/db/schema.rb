@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501233026) do
+ActiveRecord::Schema.define(version: 20170516230354) do
+
+  create_table "perfils", force: :cascade do |t|
+    t.string   "Nombre"
+    t.string   "Apellido"
+    t.integer  "Edad"
+    t.float    "Telefono"
+    t.string   "Correo_Electronico"
+    t.text     "Descripcion"
+    t.boolean  "Arrendador"
+    t.boolean  "Arrendatario"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", null: false
