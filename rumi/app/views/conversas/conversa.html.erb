@@ -1,0 +1,15 @@
+<div class="panel panel-default" data-conversa-id="<%= conversa.id %>">
+    <div class="panel-heading">
+      <%= link_to conversa.opposed_user(user).email, '', class: 'toggle-window' %>
+      <%= link_to "x", '', class: "btn btn-default btn-xs pull-right" %>
+    </div>
+ 
+    <div class="panel-body" style="display: none;">
+      <div class="chats-list">
+        <ul>
+          <%= render 'conversas/conversa_content', chats: conversa.messages, user: user %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</li>
