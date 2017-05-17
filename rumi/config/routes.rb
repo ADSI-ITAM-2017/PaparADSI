@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'propiedads/index'
+
+  get 'propiedads/show'
+
+  get 'propiedads/create'
+
+  get 'propiedads/new'
+
   get 'perfils/index'
 
   get 'perfils/show'
@@ -11,6 +19,8 @@ Rails.application.routes.draw do
   resources :welcomes
 
   resources :perfils
+
+  resources :propiedads
 
   resources :publicars
 

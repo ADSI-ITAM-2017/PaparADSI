@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516230354) do
+ActiveRecord::Schema.define(version: 20170517003705) do
 
   create_table "perfils", force: :cascade do |t|
     t.string   "Nombre"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20170516230354) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "propiedads", force: :cascade do |t|
+    t.string   "Titulo"
+    t.text     "Texto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

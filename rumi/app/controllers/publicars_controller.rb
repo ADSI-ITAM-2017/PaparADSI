@@ -16,7 +16,7 @@ class PublicarsController < ApplicationController
 
   	if @publicar.save
   		flash[:success] = "Success!"
-  		redirect_to publicar_path(@publicar)
+  		redirect_to root_url
   	else
   		flash[:error] = @publicar.error.full
   		redirect_to new_publicar_path

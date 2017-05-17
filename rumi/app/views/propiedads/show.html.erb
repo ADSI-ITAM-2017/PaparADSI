@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-item.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <%= link_to "Rumi", root_url, class: "navbar-brand" %>
+
+            <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ml-auto">
+
+                    <%- if current_user %>
+
+
+                    <li class="nav-item active">
+
+                    <%= link_to " Nueva Casa ", new_publicar_path %>
+                    </li>
+
+                    <li>
+                    <%= link_to " Logout ", destroy_user_session_path, method: :delete %>
+                    </li>
+
+                    <% else %>
+
+                    <li>
+                    <%= link_to " Sign Up ", new_user_registration_path %>
+                    </li>
+
+                    <li>
+                    <%= link_to " Login ", new_user_session_path %>
+                    </li>
+
+                    <% end %>
+
+                    <li>
+                        <%= link_to " Favoritos ", root_url %>
+                    </li>
+
+                    <li class="nav-item">
+                        <%= link_to " Mensajes ", root_url %>
+                    </li>
+
+                    <li class="nav-item">
+                        <%= link_to " Mis bienes ", root_url %>
+                    </li>
+
+                    <li class="nav-item">
+                        <%= link_to " Historial ", root_url %>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">'</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Imagen</a>
+                    <a href="#" class="list-group-item">Imagen 2</a>
+                    <a href="#" class="list-group-item">Imagen 3</a>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="card mt-4">
+                    <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+                    <div class="card-block">
+                        <h3 class="card-title">Nombre Propiedad</h3>
+                        <h4>$8,499.99</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span> 4.0 stars
+                    </div>
+                </div>
+                <!-- /.card -->
+
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Product Reviews
+                    </div>
+                    <div class="card-block">
+                        <p>Esta increible. Me encantaria vivir ahi.</p>
+                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                        <hr>
+                        <p>Wow</p>
+                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                        <hr>
+                        <p>Rentame esta propiedad por favor</p>
+                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                        <hr>
+                        <a href="#" class="btn btn-success">Leave a Review</a>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-inverse">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Rumi 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/tether/tether.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
