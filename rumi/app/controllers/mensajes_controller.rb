@@ -26,13 +26,16 @@ class MensajesController < ApplicationController
   # POST /mensajes.json
   def create
     @mensaje = current_user.mensajes.build(mensaje_params)
-    @mensaje.save
+    if @mensaje.save
+      sync_new @mensaje
+    end
+
     respond_with { @mensaje }
   end
 
   def mensaje_params
     params.require(:mensaje).permit(:body)
-
+  end
   # PATCH/PUT /mensajes/1
   # PATCH/PUT /mensajes/1.json
   def update

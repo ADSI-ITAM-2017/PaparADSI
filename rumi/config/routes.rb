@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   get 'propiedads/new'
 
+  get 'perfils/new'
+
+  post "perfils/new"
+
   get 'perfils/index'
 
   get 'perfils/show'
