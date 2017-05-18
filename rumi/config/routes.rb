@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :mensajes
   get 'chats/index'
 
   get 'chats/new'
