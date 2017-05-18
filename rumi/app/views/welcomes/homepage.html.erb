@@ -1,3 +1,7 @@
+<!-- <%- if current_user %>
+    <% else %>
+    <% end %> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,50 +48,48 @@
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
 
-                    <%- if current_user %>
-
-
+                    
                     <li class="nav-item active">
 
-                    <%= link_to "Nueva Casa", new_publicar_path %>
+                    <%= link_to "Nueva Casa  .", new_publicar_path %>
+               
                     </li>
 
-                    <li>
+
+                    <li class="nav-item">
+                        <%= link_to "Perfil  .", new_perfil_path %>
+                 
+                    </li>
+
+
+                    <li class="nav-item">
+                        <%= link_to "Mensajes  .", chats_index_path %>
+               
+                    </li>
+
+
+                    <li class="nav-item">
+                        <%= link_to "Mis bienes  .", propiedads_index_path %>
+               
+                    </li>
+
+
+
+                    <li class="nav-item">
                     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                 
                     </li>
-
-                    <% else %>
-
-                    <li>
-                    <%= link_to "Sign Up", new_user_registration_path %>
-                    </li>
-
-                    <li>
-                    <%= link_to "Login", new_user_session_path %>
-                    </li>
-
-                    <% end %>
-
-                    <li>
-                        <%= link_to "Favoritos", root_url %>
-                    </li>
-
-                    <li class="nav-item">
-                        <%= link_to "Mensajes", root_url %>
-                    </li>
-
-                    <li class="nav-item">
-                        <%= link_to "Mis bienes", root_url %>
-                    </li>
-
-                    <li class="nav-item">
-                        <%= link_to "Historial", root_url %>
-                    </li>
+                     
 
                 </ul>
             </div>
         </div>
     </nav>
+
+    
+    <br>
+    <br>
+
 
 
     <div class="container">
@@ -108,14 +110,10 @@
 
     <!-- Page Content -->
     <div class="container">
-
-
-        <br>
-        <br>
         
 
         <!-- Page Heading -->
-        <h1 class="my-4">Lugares Disponibles <small>Los mejores para ti</small></h1>
+        <h1 class="my-4">Las mejores propiedades <small>Al menor precio</small></h1>
 
 
         
@@ -127,8 +125,10 @@
             </div>
             <br>
             <div class="col-md-5">
+            <%= x.titulo %>
+            <%= x.precio %>
             <%= x.description %>
-            <a class="btn btn-primary" href="http://localhost:3000/publicars/<%= index %>" >View Project</a>
+            <a class="btn btn-primary" href="http://localhost:3000/publicars/<%= index %>" >Conoce mas</a>
             </div>
 
             </div>
